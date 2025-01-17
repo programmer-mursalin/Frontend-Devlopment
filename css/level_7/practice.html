@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>practice_7</title>
+    <style>
+      .progress_container {
+        width: 90%0;
+        height: 25px;
+        background-color: gainsboro;
+        border: 2px solid black;
+        border-radius: 20px;
+        position: relative;
+        left: 4%;
+      }
+      .progress_bar {
+        background-color: mediumorchid;
+        height: 100%;
+        position: 100%;
+        border-radius: 20px;
+        animation: animate_progrss 3s infinite;
+      }
+      @keyframes animate_progrss {
+        from {
+          width: 0%;
+        }
+        to {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="progress_container">
+      <div class="progress_bar"></div>
+    </div>
+  </body>
+</html>

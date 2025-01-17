@@ -1,0 +1,44 @@
+* {
+    margin: 0px;
+    padding: 0px
+}
+
+nav {
+    padding: 5px;
+}
+
+nav a {
+    text-decoration: none;
+    margin-left: 50px;
+    padding: 5px;
+}
+
+header {
+    background-color: aqua;
+}
+
+#second {
+    height: 50px;
+    width: 50px;
+    background-color: green;
+    border-radius: 50%;
+}
+
+.box {
+    height: 100px;
+    width: 100px;
+    background-color: brown;
+    margin: 5px;
+    display: inline-block;
+}
+
+#container {
+    border: 3px solid;
+    margin: 5px;
+}
+
+#box2 {
+    z-index: 2;
+    position: absolute;
+    left: 500px;
+}
