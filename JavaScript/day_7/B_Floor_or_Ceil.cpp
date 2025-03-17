@@ -1,4 +1,3 @@
-
 /*
 
 ⠐⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣆⠀⠀⠀⠀
@@ -190,56 +189,113 @@ void solve()
     //     cin >> a[i];
     //}
 
-    int x, n, m;
-    cin >> x >> n >> m;
-
-    int p = x;
-
-    for (int i = 0; i < m; i++)
+    int f, n, m;
+    cin >> f >> n >> m;
+    int c = f, a = n, b = m, a1 = n, b1 = m, d = f;
+    int o = (long long)n + (long long)m, k = (long long)n + (long long)m;
+    // if (f <= n)
+    // {
+    //     cout << 0 << " " << 0 << endl;
+    //     cheakmate
+    // }
+    int cnt = 0;
+    while (c >= 1 && o > 0)
     {
-        if (p & 1)
-        {
-            p = p / 2 + 1;
-        }
-        else
-        {
-            p /= 2;
-        }
-        if (p <= 1)
-            break;
-    }
-    for (int i = 0; i < n; i++)
-    {
-        p /= 2;
-        if (p == 0)
-            break;
-    }
-    cout << p << " ";
 
-    p = x;
+        if ((c & 1) && (a > 0 || b > 0))
+        {
 
-    for (int i = 0; i < n; i++)
-    {
-        p /= 2;
-        if (p == 0)
-            break;
-    }
-    for (int i = 0; i < m; i++)
-    {
-        if (p & 1)
-        {
-            p = p / 2 + 1;
+            c /= 2;
+            if (b > 0)
+            {
+                c++;
+                b--;
+            }
+
+            else if (a > 0)
+
+            {
+                a--;
+            }
         }
-        else
+        else if ((c != 0) && (c % 2 == 0) && (a > 0 || b > 0))
         {
-            p /= 2;
+
+            c /= 2;
+            if (a > 0)
+            {
+                a--;
+            }
+            else if (b > 0)
+            {
+                b--;
+            }
         }
-        if (p <= 1)
+        o--;
+
+        if (c == 1 && a >= 1)
+        {
+
+            c = 0;
             break;
+        }
+        if (c == 1 && (a <= 0))
+        {
+            c = 1;
+            break;
+        }
     }
-    cout << p << "\n";
+
+    while (d > 0 && k > 0)
+    {
+
+        // if (k < 1)
+        //     break;
+        if ((d != 0) && (d % 2 == 0) && (a1 > 0 || b1 > 0))
+        {
+            // if (a1 > 0 || b1 > 0)
+            d /= 2;
+            if (b1 > 0)
+            {
+
+                b1--;
+            }
+            else if (a1 > 0)
+            {
+                a1--;
+            }
+        }
+        else if ((d % 2 == 1) && (a1 > 0 || b1 > 0))
+        {
+            // if (k < 1)
+            //     break;
+
+            d /= 2;
+            if (a1 > 0)
+            {
+                a1--;
+            }
+            else if (b1 > 0)
+            {
+                b1--;
+                d++;
+            }
+        }
+        k--;
+        if (d == 1 && a1 >= 1)
+        {
+            d = 0;
+            break;
+        }
+        if (d == 1 && (a1 <= 0))
+        {
+            d = 1;
+            break;
+        }
+    }
+
+    cout << d << " " << c << endl;
 }
-
 // priority_queue<int>pq;
 // priority_queue<int,vector<int>,greater<int>>pq;
 //  sort(ALL(a),greater<int>());
