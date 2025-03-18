@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      hello ji
+      <div
+        class="box"
+        style="display: flex"
+        data-createdby="harry"
+        data-conceptby="rohan"
+      >
+        hello i am a box
+      </div>
+    </div>
+    <script>
+      let div = document.createElement('div');
+      div.innerHTML = 'I have been inserted <b> by harry vai</b>';
+      div.setAttribute('class', 'created');
+      document.querySelector('.container').append(div);
+    </script>
+  </body>
+</html>
