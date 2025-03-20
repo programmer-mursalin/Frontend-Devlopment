@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      .red {
+        color: greenyellow;
+      }
+    </style>
   </head>
   <body>
     <div class="container">
@@ -18,10 +23,18 @@
       </div>
     </div>
     <script>
-      let div = document.createElement('div');
-      div.innerHTML = 'I have been inserted <b> by harry vai</b>';
-      div.setAttribute('class', 'created');
-      document.querySelector('.container').append(div);
+      //let div = document.createElement('div');
+      //div.innerHTML = 'I have been inserted <b> by harry vai</b>';
+      //div.setAttribute('class', 'created');
+      //document.querySelector('.container').append(div);
+      //document.querySelector('.container').before(div);
+      let cont = document.querySelector('.container');
+      document.querySelector('.container').classList.add('red');
+      cont.insertAdjacentHTML(
+        'afterend',
+        ' <b>hey hello i am learning javascript </b>'
+      );
+      //document.querySelector(".container").classList.toggle("red")
     </script>
   </body>
 </html>
