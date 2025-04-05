@@ -39,3 +39,11 @@ registerEvent('hover', handleClick); // Output: Invalid Event
 // const second = () => console.log('Second function executed!');
 
 // nestedCallback(first, second);
+function sum(a, b) {
+  console.log(a + b);
+}
+
+function calculater(a, b, sumCallback) {
+  sumCallback(a, b);
+}
+calculater(1, 2, sum);

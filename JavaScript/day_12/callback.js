@@ -15,13 +15,3 @@
 // calculater(3, 4, () => {
 //   console.log(a + b);
 // });
-
-function getdata(dataid, getnextdata) {
-  sertTimeout(() => {
-    console.log('data', dataid);
-    getnextdata();
-  }, 2000);
-}
-getdata(1, () => {
-  getdata(2);
-});
