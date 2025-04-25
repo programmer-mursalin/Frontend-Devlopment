@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>addItem Demo</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      input {
+        padding: 8px;
+        font-size: 16px;
+      }
+      button {
+        padding: 8px 15px;
+        font-size: 16px;
+        margin-left: 10px;
+        cursor: pointer;
+      }
+      .output-item {
+        background-color: #f0f0f0;
+        padding: 10px;
+        margin-top: 10px;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>📌 Type something and add below 👇</h2>
+    <input type="text" id="myInput" placeholder="Write something..." />
+    <button onclick="addFromInput()">Add</button>
+
+    <script>
+      // 👉 Simulate random delay using Promise and setTimeout
+      const randomDelay = () => {
+        let time = Math.floor(Math.random() * 1500) + 500; // 500ms to 2000ms
+        return new Promise((resolve) => setTimeout(resolve, time));
+      };
+
+      // 👉 Main function to create a div and add content
+      const addItem = async (item) => {
+        await randomDelay(); // simulate delay
+        let div = document.createElement('div');
+        div.className = 'output-item';
+        div.innerHTML = item;
+        document.body.append(div);
+      };
+
+      // 👉 Function that gets input value and calls addItem()
+      function addFromInput() {
+        let userText = document.getElementById('myInput').value;
+        if (userText.trim() !== '') {
+          addItem(userText);
+          document.getElementById('myInput').value = ''; // clear input
+        }
+      }
+    </script>
+  </body>
+</html>
