@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let a;
+      if (localStorage.getItem('name')) {
+        a = localStorage.getItem('name');
+        document.write('Welcome ' + a + '<br>');
+      } else {
+        a = prompt('Enter your name');
+        localStorage.setItem('name', a);
+        document.write('Welcome ' + a + '<br>');
+      }
+
+      a = {
+        harry: 1,
+        rohan: 69,
+      };
+      localStorage.setItem('guys', JSON.stringify(a));
+      localStorage.getItem('guys');
+      let x = JSON.parse(localStorage.getItem('guys'));
+      document.write('Welcome ' + x.harry);
+    </script>
+  </body>
+</html>
