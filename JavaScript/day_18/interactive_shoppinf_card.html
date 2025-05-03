@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping Cart Totalizer</title>
+    <style>
+      body {
+        font-family: Arial;
+        padding: 20px;
+      }
+      input,
+      button {
+        padding: 8px;
+        margin: 5px;
+      }
+      .product {
+        margin-bottom: 10px;
+      }
+      #cartList {
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>🛍️ Shopping Cart</h2>
+
+    <div class="product">
+      <input type="number" id="price" placeholder="Price (e.g. 100)" />
+      <input type="number" id="quantity" placeholder="Quantity (e.g. 2)" />
+      <button onclick="addProduct()">Add to Cart</button>
+    </div>
+
+    <h3>🧾 Cart Items:</h3>
+    <ul id="cartList"></ul>
+
+    <h3>💰 Total: <span id="totalAmount">0</span> টাকা</h3>
+
+    <script>
+      const cart = [];
+
+      function calculateTotal(cart) {
+        return cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+      }
+
+      function addProduct() {
+        const priceInput = document.getElementById('price');
+        const quantityInput = document.getElementById('quantity');
+
+        const price = parseFloat(priceInput.value);
+        const quantity = parseInt(quantityInput.value);
+
+        if (isNaN(price) || isNaN(quantity) || price <= 0 || quantity <= 0) {
+          alert('সঠিকভাবে price এবং quantity দিন!');
+          return;
+        }
+
+        // Add to cart
+        const product = { price, quantity };
+        cart.push(product);
+
+        // Show in UI
+        const li = document.createElement('li');
+        li.textContent = `৳${price} x ${quantity} = ৳${price * quantity}`;
+        document.getElementById('cartList').appendChild(li);
+
+        // Update total
+        const total = calculateTotal(cart);
+        document.getElementById('totalAmount').innerText = total;
+
+        // Clear input fields
+        priceInput.value = '';
+        quantityInput.value = '';
+      }
+    </script>
+  </body>
+</html>

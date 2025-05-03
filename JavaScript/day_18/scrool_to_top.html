@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="bn">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Smooth Scroll to Top</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 2;
+      }
+
+      #scrollToTopBtn {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        padding: 10px 20px;
+        background-color: #0a74da;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        display: none; /* শুরুতে বাটনটি লুকানো থাকবে */
+      }
+    </style>
+  </head>
+  <body>
+    <h1>স্বাগতম!</h1>
+    <p>অনেকগুলো প্যারাগ্রাফ নিচে নিচে স্ক্রল করুন...</p>
+
+    <!-- অনেক কন্টেন্ট জেনারেট করে নিচে স্ক্রল করার সুযোগ -->
+    <div style="height: 2000px">
+      <p>নিচের দিকে আরও আরও কন্টেন্ট...</p>
+    </div>
+
+    <!-- Scroll to Top বাটন -->
+    <button id="scrollToTopBtn" onclick="smoothScrollToTop()">
+      উপরে যান ↑
+    </button>
+
+    <script>
+      function smoothScrollToTop() {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth',
+        });
+      }
+
+      // স্ক্রল করলে বাটনটি দেখানো / লুকানো
+      window.addEventListener('scroll', function () {
+        const button = document.getElementById('scrollToTopBtn');
+        if (window.scrollY > 300) {
+          button.style.display = 'block';
+        } else {
+          button.style.display = 'none';
+        }
+      });
+    </script>
+  </body>
+</html>

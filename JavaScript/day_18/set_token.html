@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Auth Token Example</title>
+  </head>
+  <body>
+    <h2>🔐 Login Token Demo</h2>
+
+    <input type="text" id="tokenInput" placeholder="Enter your token" />
+    <button onclick="login()">Login</button>
+    <button onclick="checkToken()">Check Token</button>
+    <button onclick="logout()">Logout</button>
+
+    <p id="result"></p>
+
+    <script>
+      function login() {
+        const token = document.getElementById('tokenInput').value;
+
+        if (!token) {
+          alert('Please enter a token!');
+          return;
+        }
+
+        const expiresAt = Date.now() + 60000; // ১ মিনিট পর মেয়াদ শেষ হবে
+
+        const authData = {
+          token: token,
+          expiresAt: expiresAt,
+        };
+
+        localStorage.setItem('authToken', JSON.stringify(authData));
+
+        document.getElementById(
+          'result'
+        ).innerText = `✅ Token saved! Expires at: ${new Date(expiresAt)}`;
+      }
+
+      function checkToken() {
+        const authData = localStorage.getItem('authToken');
+
+        if (!authData) {
+          document.getElementById('result').innerText = '❌ No token found!';
+          return;
+        }
+
+        const parsed = JSON.parse(authData);
+        const now = Date.now();
+
+        if (now > parsed.expiresAt) {
+          document.getElementById('result').innerText = '⚠️ Token expired!';
+        } else {
+          document.getElementById('result').innerText = `✅ Token valid: ${
+            parsed.token
+          }\nExpires at: ${new Date(parsed.expiresAt)}`;
+        }
+      }
+
+      function logout() {
+        localStorage.removeItem('authToken');
+        document.getElementById('result').innerText =
+          '🚪 Logged out. Token removed.';
+      }
+    </script>
+  </body>
+</html>
