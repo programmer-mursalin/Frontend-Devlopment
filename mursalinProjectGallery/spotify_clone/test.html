@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .box {
+        position: relative;
+        width: 300px;
+        height: 200px;
+        background-color: lightblue;
+        overflow: hidden;
+      }
+
+      .text {
+        position: absolute;
+        bottom: -50px; /* নিচে লুকানো */
+        left: 50%;
+        transform: translateX(-50%);
+        transition: all 0.5s ease; /* ধীরে পরিবর্তনের জন্য */
+        opacity: 0; /* শুরুতে অদৃশ্য */
+      }
+
+      .box:hover .text {
+        bottom: 50%; /* উপরের মাঝামাঝি */
+        transform: translate(-50%, 50%);
+        opacity: 1; /* দৃশ্যমান */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <h2 class="text">Hello, World!</h2>
+    </div>
+  </body>
+</html>

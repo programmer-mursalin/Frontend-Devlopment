@@ -15,6 +15,9 @@
     align-items: center;
 }
 
-.logo {
-    font-size: small;
+.libray h4,
+img {
+
+    display: flex;
+
 }
