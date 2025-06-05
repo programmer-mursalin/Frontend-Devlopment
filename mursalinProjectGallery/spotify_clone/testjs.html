@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>🎵 Advanced Offline Music Player</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #121212;
+        color: white;
+        padding: 30px;
+        text-align: center;
+      }
+      input[type='file'] {
+        margin: 20px 0;
+      }
+      #playlist a {
+        display: block;
+        margin: 5px 0;
+        color: #ccc;
+        cursor: pointer;
+        text-decoration: none;
+      }
+      #playlist a.active {
+        font-weight: bold;
+        color: #00e5ff;
+      }
+      audio {
+        width: 100%;
+        max-width: 600px;
+        margin-top: 20px;
+      }
+      button {
+        margin: 10px;
+        padding: 10px 20px;
+        background: #1db954;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      button:hover {
+        background: #17a64a;
+      }
+      #controls {
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>🎧 Advanced Offline Music Player</h1>
+    <input type="file" id="fileInput" multiple accept=".mp3" />
+    <div id="controls">
+      <button onclick="prevSong()">⏮️ Prev</button>
+      <button onclick="playPause()">▶️/⏸️ Play/Pause</button>
+      <button onclick="nextSong()">⏭️ Next</button>
+      <button onclick="shuffleSong()">🔀 Shuffle</button>
+      <input
+        type="range"
+        id="volumeSlider"
+        min="0"
+        max="1"
+        step="0.01"
+        value="1"
+      />
+    </div>
+
+    <audio id="audioPlayer" controls></audio>
+    <h3 id="nowPlaying">No song playing</h3>
+    <div id="playlist">Select songs above ☝️</div>
+
+    <script>
+      const fileInput = document.getElementById('fileInput');
+      const playlist = document.getElementById('playlist');
+      const audioPlayer = document.getElementById('audioPlayer');
+      const nowPlaying = document.getElementById('nowPlaying');
+      const volumeSlider = document.getElementById('volumeSlider');
+
+      let songs = [];
+      let currentIndex = 0;
+
+      fileInput.addEventListener('change', function () {
+        songs = Array.from(this.files);
+        playlist.innerHTML = '';
+        currentIndex = 0;
+
+        songs.forEach((song, index) => {
+          const link = document.createElement('a');
+          link.textContent = song.name;
+          link.href = '#';
+          link.onclick = () => {
+            playSong(index);
+          };
+          playlist.appendChild(link);
+        });
+
+        if (songs.length > 0) {
+          playSong(0);
+        }
+      });
+
+      function playSong(index) {
+        currentIndex = index;
+        const song = songs[index];
+        const objectURL = URL.createObjectURL(song);
+        audioPlayer.src = objectURL;
+        audioPlayer.play();
+        nowPlaying.textContent = '🎵 Now Playing: ' + song.name;
+
+        highlightCurrentSong();
+      }
+
+      function highlightCurrentSong() {
+        const links = playlist.getElementsByTagName('a');
+        for (let i = 0; i < links.length; i++) {
+          links[i].classList.remove('active');
+        }
+        if (links[currentIndex]) {
+          links[currentIndex].classList.add('active');
+        }
+      }
+
+      function nextSong() {
+        if (songs.length === 0) return;
+        currentIndex = (currentIndex + 1) % songs.length;
+        playSong(currentIndex);
+      }
+
+      function prevSong() {
+        if (songs.length === 0) return;
+        currentIndex = (currentIndex - 1 + songs.length) % songs.length;
+        playSong(currentIndex);
+      }
+
+      function playPause() {
+        if (audioPlayer.paused) {
+          audioPlayer.play();
+        } else {
+          audioPlayer.pause();
+        }
+      }
+
+      function shuffleSong() {
+        if (songs.length === 0) return;
+        let randomIndex = Math.floor(Math.random() * songs.length);
+        playSong(randomIndex);
+      }
+
+      volumeSlider.addEventListener('input', function () {
+        audioPlayer.volume = this.value;
+      });
+
+      // Auto-play next song when one ends
+      audioPlayer.addEventListener('ended', nextSong);
+    </script>
+  </body>
+</html>

@@ -20,6 +20,7 @@ body {
 
 .right {
     width: 75vw;
+    position: absolute;
 }
 
 
@@ -208,3 +209,22 @@ body {
 
     gap: 10px;
 } */
+
+/* .spotifyPlaylists {
+    position: relative;
+} */
+
+.playbar {
+    position: absolute;
+    bottom: 0;
+    background-color: rgb(91, 192, 91);
+    width: 100%;
+    padding: 12px;
+
+}
+
+.songbtn {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
