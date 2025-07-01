@@ -110,6 +110,17 @@
         highlightCurrentSong();
       }
 
+      function playSong(index) {
+        currentIndex = index;
+        const song = songs[index];
+        const objectURL = URL.createObjectURL(song);
+        audioPlayer.src = objectURL;
+        audioPlayer.play();
+        nowPlaying.textContent = '🎵 Now Playing: ' + song.name;
+
+        highlightCurrentSong();
+      }
+
       function highlightCurrentSong() {
         const links = playlist.getElementsByTagName('a');
         for (let i = 0; i < links.length; i++) {

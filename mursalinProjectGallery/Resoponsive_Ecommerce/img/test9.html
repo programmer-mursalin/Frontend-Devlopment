@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hamburger Menu Demo</title>
+
+    <!-- Font Awesome for hamburger and close icon -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+      }
+
+      /* Header styling */
+      #header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 40px;
+        background-color: #e3e6f3;
+        position: sticky;
+        top: 0;
+        z-index: 999;
+      }
+
+      #header h2 {
+        font-size: 24px;
+        color: #088178;
+      }
+
+      /* Navbar styles */
+      #navbar {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        transition: right 0.3s ease;
+      }
+
+      #navbar li {
+        list-style: none;
+      }
+
+      #navbar li a {
+        text-decoration: none;
+        font-weight: 600;
+        color: #1a1a1a;
+        transition: color 0.3s ease;
+      }
+
+      #navbar li a:hover {
+        color: #088178;
+      }
+
+      /* Mobile hamburger icon */
+      #mobile {
+        display: none;
+        align-items: center;
+      }
+
+      #mobile i {
+        font-size: 28px;
+        color: #088178;
+        cursor: pointer;
+      }
+
+      /* Close icon */
+      #close {
+        display: none;
+        font-size: 28px;
+        color: #088178;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        cursor: pointer;
+      }
+
+      /* Responsive menu */
+      @media (max-width: 768px) {
+        #navbar {
+          position: fixed;
+          top: 0;
+          right: -300px;
+          height: 100vh;
+          width: 250px;
+          flex-direction: column;
+          align-items: flex-start;
+          background-color: #e3e6f3;
+          padding: 80px 20px;
+          box-shadow: 0 40px 60px rgba(0, 0, 0, 0.1);
+        }
+
+        #navbar.active {
+          right: 0;
+        }
+
+        #mobile {
+          display: flex;
+        }
+
+        #close {
+          display: block;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header with navbar and hamburger icon -->
+    <section id="header">
+      <h2>MySite</h2>
+      <ul id="navbar">
+        <i id="close" class="fas fa-times"></i>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Shop</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <div id="mobile">
+        <i id="bar" class="fas fa-bars"></i>
+      </div>
+    </section>
+
+    <!-- JavaScript to handle hamburger and close -->
+    <script>
+      const bar = document.getElementById('bar');
+      const nav = document.getElementById('navbar');
+      const close = document.getElementById('close');
+
+      if (bar) {
+        bar.addEventListener('click', () => {
+          nav.classList.add('active');
+        });
+      }
+
+      if (close) {
+        close.addEventListener('click', () => {
+          nav.classList.remove('active');
+        });
+      }
+    </script>
+  </body>
+</html>

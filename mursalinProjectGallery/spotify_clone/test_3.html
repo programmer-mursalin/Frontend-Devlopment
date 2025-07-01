@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Simple Music Player</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #222;
+        color: white;
+        text-align: center;
+        padding: 50px;
+      }
+      input,
+      button {
+        padding: 10px;
+        font-size: 18px;
+        margin: 5px;
+        border-radius: 5px;
+        border: none;
+      }
+      input {
+        width: 300px;
+      }
+      audio {
+        margin-top: 30px;
+        width: 80%;
+        outline: none;
+        border-radius: 10px;
+        background: #333;
+      }
+      #msg {
+        margin-top: 15px;
+        color: #ff5555;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Search and Play Music</h1>
+    <input id="search" type="text" placeholder="Type: alan / epic / piano" />
+    <button onclick="play()">Play</button>
+    <div id="msg"></div>
+    <audio controls id="player"></audio>
+
+    <script>
+      const songs = {
+        alan: 'https://files.freemusicarchive.org/storage-freemusicarchive-org/music/no_curator/Scott_Holmes/Corporate__Motivational_Music/Scott_Holmes_-_Happy_Ukulele.mp3',
+        epic: 'https://files.freemusicarchive.org/storage-freemusicarchive-org/music/ccCommunity/Scott_Holmes_Music/Happy_Music/Scott_Holmes_Music_-_Upbeat_Party.mp3',
+        piano:
+          'https://files.freemusicarchive.org/storage-freemusicarchive-org/music/ccCommunity/Komiku/Komiku_-_Its_time_for_adventure/Komiku_-_12_-_The_Gift.mp3',
+      };
+
+      function play() {
+        const val = document
+          .getElementById('search')
+          .value.trim()
+          .toLowerCase();
+        const msg = document.getElementById('msg');
+        const player = document.getElementById('player');
+        if (songs[val]) {
+          player.src = songs[val];
+          player.play();
+          msg.textContent = '';
+        } else {
+          player.pause();
+          player.src = '';
+          msg.textContent = 'ভাই, গান পাওয়া যায় নাই! Try: alan, epic, piano';
+        }
+      }
+    </script>
+  </body>
+</html>
