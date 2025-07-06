@@ -1,0 +1,5 @@
+কোণ (deg)	অর্থ
+0deg	উপরে থেকে নিচে (top → bottom)
+90deg	বাম থেকে ডানে (left → right)
+180deg	নিচ থেকে উপরে (bottom → top)
+135deg	উপরের বাম দিক → নিচের ডান দিক (diagonal)
