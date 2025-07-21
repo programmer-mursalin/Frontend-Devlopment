@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="bn">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Navy Box with Shadow</title>
+    <style>
+      body {
+        background-color: #f0f0f0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      .grab-box {
+        width: 250px;
+        height: 160px;
+        background-color: navy;
+        color: white;
+        font-family: sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 22px;
+        border-radius: 12px;
+        cursor: grab;
+
+        /* বড় ছায়া */
+        box-shadow: 0 8px 20px rgba(4, 236, 81, 0.5);
+
+        /* স্মুথ হোভার */
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+
+      .grab-box:hover {
+        transform: scale(1.05);
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.6);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grab-box">Navy বক্স 😎</div>
+  </body>
+</html>
