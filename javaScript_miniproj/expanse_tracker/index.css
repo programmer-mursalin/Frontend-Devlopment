@@ -1,0 +1,115 @@
+body {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 1rem;
+    font-family: sans-serif;
+    background-color: rgb(115, 209, 154);
+
+}
+
+.MainBox {
+    height: 100%;
+    width: 120vh;
+    background-color: white;
+
+
+
+
+}
+
+.balance {
+    display: flex;
+
+    /* Unit dite hobe */
+    height: 200px;
+    align-items: center;
+    border-radius: 8px;
+    background: linear-gradient(to right, #3fa57b, #74b863);
+    border: 2px solid black;
+    justify-content: space-evenly;
+    margin-left: 18px;
+    margin-right: 18px;
+    flex-direction: column;
+
+
+}
+
+.ic {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+
+}
+
+.income {
+    height: 80px;
+    width: 330px;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 2px;
+}
+
+.expense {
+    height: 80px;
+    width: 330px;
+    background-color: white;
+    /* display: block;
+   
+    align-items: center;
+    justify-content: center; */
+    border: 2px solid black;
+    border-radius: 2px;
+}
+
+.expense h5 {
+    margin-bottom: 4px;
+}
+
+.income h5 {
+    margin-bottom: 4px;
+}
+
+/* .tbal {
+    font-weight: bold;
+} */
+
+.b {
+    font-size: 30px;
+}
+
+.bp {
+    display: flex;
+    /* align-items: center; */
+    justify-content: space-around;
+}
+
+.show_tran {
+    display: flex;
+    flex-direction: column;
+    margin-left: 0;
+    align-self: flex-start;
+    background-color: antiquewhite;
+    height: 300px;
+
+}
+
+.list {
+    display: flex;
+    justify-content: space-between;
+    gap: 250px;
+    width: 350px;
+    align-items: center;
+    height: 50px;
+    background-color: azure;
+
+
+}
+
+.add_tran {
+    background-color: aliceblue;
+    width: 50%;
+}
