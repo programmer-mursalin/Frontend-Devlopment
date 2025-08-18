@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #transaction-list {
+        list-style: none;
+        max-height: 200px; /* container এর height fix করা হলো */
+        overflow-y: auto; /* content বেশি হলে scrollbar আসবে */
+        padding-right: 8px;
+
+        width: 250px;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        background: rgb(236, 233, 23);
+      }
+      #transaction-list::-webkit-scrollbar {
+        width: 8px;
+      }
+      #transaction-list::-webkit-scrollbar-track {
+        background-color: #f1f1f1;
+        border-radius: 4px;
+      }
+      #transaction-list::-webkit-scrollbar-thumb {
+        background-color: #cbd5e0;
+        border-radius: 4px;
+      }
+      #transaction-list::-webkit-scrollbar-thumb:hover {
+        background-color: #a0aec0;
+      }
+    </style>
+  </head>
+  <body>
+    <ul id="transaction-list">
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+      <li>Item 4</li>
+      <li>Item 5</li>
+      <li>Item 6</li>
+      <li>Item 7</li>
+      <li>Item 8</li>
+      <li>Item 9</li>
+      <li>Item 10</li>
+      <li>Item 11</li>
+      <li>Item 12</li>
+      <li>Item 13</li>
+      <li>Item 14</li>
+      <li>Item 15</li>
+    </ul>
+  </body>
+</html>

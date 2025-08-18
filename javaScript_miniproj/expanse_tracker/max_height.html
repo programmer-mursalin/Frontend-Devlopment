@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="bn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Max-Height Example</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        padding: 50px;
+        background-color: #f0f0f0;
+      }
+
+      .box {
+        width: 300px;
+        max-height: 500px; /* সর্বোচ্চ উচ্চতা */
+        padding: 15px;
+        border: 2px solid #333;
+        background-color: #fff;
+        overflow-y: auto; /* scrollbar প্রয়োজন হলে দেখাবে */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      .box p {
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <p>এটি একটি উদাহরণ বাক্স।</p>
+      <p>এই বাক্সের সর্বোচ্চ উচ্চতা 200px।</p>
+      <p>যদি content বেশি হয়, scrollbar দেখাবে।</p>
+      <p>আমরা CSS এর box model ব্যবহার করেছি।</p>
+      <p>padding, border, এবং margin সবকিছু ঠিকভাবে কাজ করবে।</p>
+      <p>আরও কিছু extra content যোগ করলে scrollbar আসবে।</p>
+      <p>Scroll করে সব content দেখা যাবে।</p>
+      <p>এতে responsive design সহজ হয়।</p>
+      <p>এটি practical উদাহরণ।</p>
+    </div>
+  </body>
+</html>
