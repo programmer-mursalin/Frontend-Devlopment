@@ -5,11 +5,13 @@ import TodoItem2 from './component/todoitem2';
 import './app.css';
 function App() {
   return (
-    <center class='to_do_container'>
+    <center className='to_do_container'>
       <AppName />
       <Todoitem1 />
-      <AddTodo />
-      <TodoItem2 />
+      <div class='items-container'>
+        <AddTodo />
+        <TodoItem2 />
+      </div>
     </center>
   );
 }
