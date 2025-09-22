@@ -1,6 +1,6 @@
-const ErrMsg = () => {
-  //   let fooditems = ['dal', 'roti', 'porota', 'salad'];
+import React from 'react';
 
-  return <>{fooditems.length === 0 ? <h3>I am hungry</h3> : null}</>;
+const ErrMsg = ({ items }) => {
+  return <>{items.length === 0 ? <h3>I am hungry</h3> : null}</>;
 };
 export default ErrMsg;
