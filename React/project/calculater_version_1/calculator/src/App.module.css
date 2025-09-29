@@ -1,0 +1,27 @@
+.calculater {
+    border: 1px solid black;
+    width: 200px;
+    border-radius: 5px;
+}
+
+.display {
+    margin: 10px;
+    width: 175px;
+    font-size: 25px;
+}
+
+.bc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    /* পুরো screen height */
+
+}
+
+.btn {
+    width: 45px;
+    height: 45px;
+    margin: 3px;
+}

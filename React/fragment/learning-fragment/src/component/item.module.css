@@ -10,3 +10,13 @@
 .food-heading {
     background-color: rgb(238, 10, 10);
 }
+
+/* শুধু override করার জন্য নিজের আলাদা class */
+.mybtn {
+    float: right;
+}
+
+.mybtn:hover {
+    background-color: rgb(255, 187, 0) !important;
+    border-color: rgb(255, 187, 0) !important;
+}
