@@ -1,0 +1,21 @@
+
+
+input {
+    width: 100%;
+    margin-right: 5px;
+    padding-left: 6px;
+
+}
+
+.items-container {
+    text-align: left;
+}
+
+
+.kg-button {
+    min-width: 80px;
+}
+
+.kg-row {
+    margin: 10px 5px;
+}
