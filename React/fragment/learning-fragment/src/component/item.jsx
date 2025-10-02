@@ -1,9 +1,11 @@
 import React from 'react';
 import styles from './item.module.css';
 
-const Item = ({ foodItem, handleEvent }) => {
+const Item = ({ foodItem, bought, handleEvent }) => {
   return (
-    <li className={`${styles['kg-item']} list-group-item`}>
+    <li
+      className={`${styles['kg-item']} list-group-item  ${bought && 'active'}`}
+    >
       <span className={styles['kg-span']}>{foodItem}</span>
       <button
         className={`  btn btn-success  ${styles.mybtn}  `}
