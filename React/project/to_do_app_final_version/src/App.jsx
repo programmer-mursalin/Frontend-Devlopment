@@ -1,31 +1,33 @@
+import { useState } from 'react';
 import AppName from './component/AppName';
 import Todoitem1 from './component/Add';
-import './app.css';
 import To_do_item_new from './component/item_add_new';
-import { useState } from 'react';
+import './app.css';
+import Welcome from './component/welcome';
+import { To_do_item_Create_context } from './store/to_item_store';
+
 function App() {
-  const [todoItems, seTodoItems] = useState([
-    { Name: 'Buy Milk', due_date: '5/5/6' },
-    { Name: 'Buy Milk', due_date: '5/5/6' },
-    { Name: 'Buy Milk', due_date: '5/5/6' },
-    { Name: 'Buy Milk', due_date: '5/5/6' },
-    { Name: 'Buy Milk', due_date: '5/5/6' },
-    { Name: 'Buy Milk', due_date: '5/5/6' },
-  ]);
+  const [todoItems, setTodoItems] = useState([]);
 
   const add_item = (name, date) => {
-    if (name && date) {
-      const newItm = [...todoItems, { Name: name, due_date: date }];
-
-      seTodoItems(newItm);
-    }
+    setTodoItems((curr) => [...curr, { Name: name, due_date: date }]);
   };
+
+  const delete_item = (todoName) => {
+    setTodoItems((curr) => curr.filter((item) => item.Name !== todoName));
+  };
+
   return (
-    <center className='to_do_container'>
-      <AppName />
-      <Todoitem1 item={add_item} />
-      <To_do_item_new todoItems={todoItems}></To_do_item_new>
-    </center>
+    <To_do_item_Create_context.Provider
+      value={{ todoItems, add_item, delete_item }}
+    >
+      <center className='to_do_container'>
+        <AppName />
+        <Todoitem1 />
+        <Welcome />
+        <To_do_item_new />
+      </center>
+    </To_do_item_Create_context.Provider>
   );
 }
 

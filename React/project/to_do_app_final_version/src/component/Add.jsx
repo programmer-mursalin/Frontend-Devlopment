@@ -1,44 +1,47 @@
-import { useState } from 'react';
+import { useRef, useContext } from 'react';
+import { MdAddLink } from 'react-icons/md';
+import { To_do_item_Create_context } from '../store/to_item_store';
+function Todoitem1() {
+  const todoNameElement = useRef();
+  const todoDateElement = useRef();
 
-function Todoitem1({ item }) {
-  const [todoname, setTodoname] = useState('');
-  const [tododate, setTododate] = useState('');
+  const { add_item } = useContext(To_do_item_Create_context);
 
-  const add_name = (event) => {
-    setTodoname(event.target.value);
+  const button_click = (event) => {
+    event.preventDefault();
+
+    const todoname = todoNameElement.current.value.trim();
+    const tododate = todoDateElement.current.value;
+
+    if (!todoname) return; // optional validation
+
+    add_item(todoname, tododate);
+
+    todoNameElement.current.value = '';
+    todoDateElement.current.value = '';
   };
-  const add_date = (event) => {
-    setTododate(event.target.value);
-  };
-  const button_click = () => {
-    item(todoname, tododate);
-    setTododate('');
-    setTodoname('');
-  };
+
   return (
     <div className='container'>
-      <div className='row kg-row'>
+      <form className='row kg-row' onSubmit={button_click}>
         <div className='col-6'>
           <input
-            type='text '
+            type='text'
+            ref={todoNameElement}
             placeholder='Enter Todo here'
-            onChange={add_name}
           />
         </div>
         <div className='col-4'>
-          <input type='date' onChange={add_date} />
+          <input type='date' ref={todoDateElement} />
         </div>
         <div className='col-2'>
-          <button
-            type='button'
-            className='btn btn-success kg-button'
-            onClick={button_click}
-          >
-            Add
+          <button type='submit' className='btn btn-success kg-button'>
+            <MdAddLink />
           </button>
         </div>
-      </div>
+      </form>
     </div>
   );
 }
+
 export default Todoitem1;
