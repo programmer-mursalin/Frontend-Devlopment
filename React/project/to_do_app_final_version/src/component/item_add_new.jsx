@@ -1,7 +1,7 @@
 import Final_to_do from './final_to_do_add';
 import { To_do_item_Create_context } from '../store/to_item_store';
 import { useContext } from 'react';
-const To_do_item_new = ({ op }) => {
+const To_do_item_new = () => {
   const { todoItems } = useContext(To_do_item_Create_context);
   // console.log({ To_do_item_Create_context });
   return (
@@ -11,7 +11,6 @@ const To_do_item_new = ({ op }) => {
           key={item.id} // unique key
           todoName={item.Name}
           todoDate={item.due_date}
-          op={op}
         />
       ))}
     </div>
