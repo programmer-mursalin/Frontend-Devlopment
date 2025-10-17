@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mursalin Portfolio</title>
+    <style>
+      /* Basic CSS setup */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(120deg, #1e1e2f, #15151f);
+        color: white;
+        line-height: 1.6;
+      }
+
+      header {
+        background: #27293d;
+        padding: 25px 0;
+        text-align: center;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      }
+
+      header h1 {
+        font-size: 32px;
+        margin-bottom: 8px;
+        color: #4fc3f7;
+      }
+
+      header p {
+        color: #bdbdbd;
+        font-size: 15px;
+      }
+
+      nav {
+        margin-top: 15px;
+      }
+
+      nav a {
+        color: white;
+        text-decoration: none;
+        margin: 0 10px;
+        background: #4fc3f7;
+        padding: 8px 14px;
+        border-radius: 6px;
+        transition: 0.3s;
+        font-weight: bold;
+      }
+
+      nav a:hover {
+        background: #0288d1;
+      }
+
+      .container {
+        max-width: 1000px;
+        margin: 30px auto;
+        padding: 20px;
+      }
+
+      .about,
+      .projects,
+      .contact {
+        background: #2a2d43;
+        padding: 25px;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+        margin-bottom: 30px;
+        transition: 0.3s;
+      }
+
+      .about:hover,
+      .projects:hover,
+      .contact:hover {
+        transform: translateY(-5px);
+      }
+
+      h2 {
+        color: #4fc3f7;
+        margin-bottom: 10px;
+        border-bottom: 2px solid #4fc3f7;
+        display: inline-block;
+        padding-bottom: 4px;
+      }
+
+      .about img {
+        width: 150px;
+        border-radius: 50%;
+        margin: 15px 0;
+        border: 3px solid #4fc3f7;
+      }
+
+      .projects img {
+        width: 100%;
+        border-radius: 10px;
+        margin: 15px 0;
+      }
+
+      .contact a {
+        color: #4fc3f7;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      footer {
+        background: #27293d;
+        text-align: center;
+        padding: 15px;
+        color: #bdbdbd;
+        font-size: 14px;
+        border-top: 1px solid #444;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Md. Mursalin</h1>
+      <p>
+        Web Developer | Competitive Programmer | Student, Sheikh Hasina
+        University
+      </p>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <div class="container">
+      <section class="about" id="about">
+        <h2>About Me</h2>
+        <img
+          src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=600&q=60"
+          alt="Profile"
+        />
+        <p>BISMILLAHIR RAHMANIR RAHIM</p>
+        <p>
+          Hello! I am <strong>Md. Mursalin</strong>, a passionate web developer
+          and competitive programmer. I enjoy creating modern websites using
+          HTML, CSS, and JavaScript, and I also love solving programming
+          problems in C++.
+        </p>
+        <p>
+          Currently, I am studying Computer Science and Engineering at Sheikh
+          Hasina University, Netrokona.
+        </p>
+      </section>
+
+      <section class="projects" id="projects">
+        <h2>My Projects</h2>
+        <h3>1. Train Ticket Booking System</h3>
+        <img
+          src="https://images.unsplash.com/photo-1526378727883-2d8b1e9b2d5b?auto=format&fit=crop&w=800&q=60"
+          alt="Project 1"
+        />
+        <p>
+          A simple ticket booking website UI built using HTML, CSS, and basic
+          JavaScript. It allows users to select routes and book tickets easily.
+        </p>
+
+        <h3>2. Smart Blind Stick</h3>
+        <img
+          src="https://images.unsplash.com/photo-1581092795360-8f7c7b46f2b2?auto=format&fit=crop&w=800&q=60"
+          alt="Project 2"
+        />
+        <p>
+          An IoT-based prototype using ultrasonic sensors and buzzers to help
+          visually impaired people navigate safely.
+        </p>
+
+        <h3>3. Portfolio Website</h3>
+        <img
+          src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=60"
+          alt="Project 3"
+        />
+        <p>
+          This personal portfolio site (the one you’re viewing now!) is built
+          entirely with HTML and CSS — clean, fast, and responsive.
+        </p>
+      </section>
+
+      <section class="contact" id="contact">
+        <h2>Contact</h2>
+        <p>
+          Email:
+          <a href="mailto:your.email@example.com">your.email@example.com</a>
+        </p>
+        <p>
+          LinkedIn:
+          <a
+            href="https://www.linkedin.com/in/mursalin-shuvo-99139a254/"
+            target="_blank"
+            >linkedin.com/in/mursalin-shuvo-99139a254</a
+          >
+        </p>
+        <p>GitHub: <a href="#">(Add your GitHub link here)</a></p>
+      </section>
+    </div>
+
+    <footer>
+      <p>© 2025 Md. Mursalin — Built with only HTML & CSS</p>
+    </footer>
+  </body>
+</html>

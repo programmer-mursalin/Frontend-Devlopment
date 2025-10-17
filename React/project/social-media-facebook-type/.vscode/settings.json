@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "*.dbclient-js": "javascript",
+        "bitset": "cpp",
+        "algorithm": "cpp",
+        "chrono": "cpp"
+    }
+}

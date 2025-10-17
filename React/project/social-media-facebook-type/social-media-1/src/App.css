@@ -1,0 +1,45 @@
+/* .sidebar {
+    min-height: 800px;
+    width: '280px';
+    height: '100vh';
+    position: 'fixed';
+    left: 0;
+    top: 0;
+} */
+.d {
+    display: flex;
+}
+
+.d.ft {
+    align-items: center;
+    justify-content: center;
+}
+
+.Element {
+    width: 100%;
+}
+
+.container {
+    display: flex;
+    height: 300px;
+}
+
+.ft {
+    margin-top: auto;
+}
+
+.cstmhd {
+    display: flex;
+    align-items: flex-start;
+    height: 150px;
+    justify-content: center;
+    /* সব item উপরে থাকবে */
+}
+
+.csf {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    height: 100vh;
+
+}
