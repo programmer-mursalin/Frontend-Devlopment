@@ -1,8 +1,19 @@
 const Header = () => {
   return (
     <>
-      <header className='    p-3 text-bg-dark  '>
-        <div className=' cstmhd container'>
+      <header
+        className='    p-3 text-bg-dark   s'
+        style={{
+          width: '100%',
+        }}
+      >
+        <div
+          className=' cstmhd container'
+          style={{
+            margin: '0',
+            padding: '0',
+          }}
+        >
           <div className='d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start'>
             <a
               href='/'

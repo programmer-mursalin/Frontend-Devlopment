@@ -1,11 +1,31 @@
-/* .sidebar {
+.sidebar {
     min-height: 800px;
-    width: '280px';
-    height: '100vh';
-    position: 'fixed';
-    left: 0;
-    top: 0;
-} */
+    width: '80px';
+
+}
+
+.hastag {
+    margin: 8px;
+    padding: 5px;
+
+
+}
+
+.create-post {
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 50px;
+}
+
+.reaction {
+    margin: 15px 0 0 0;
+}
+
+.post-card {
+    margin: 20px 50px;
+
+}
+
 .d {
     display: flex;
 }
@@ -34,6 +54,7 @@
     height: 150px;
     justify-content: center;
     /* সব item উপরে থাকবে */
+    width: 100%;
 }
 
 .csf {
