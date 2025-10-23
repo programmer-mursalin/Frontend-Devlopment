@@ -8,6 +8,7 @@ import Sidebar from './component/sidebar';
 import CrPost from './component/create_post';
 import Post_List from './component/post_list';
 import PostListProvider from './store/post-list-store';
+import Welcome from './component/welcome';
 function App() {
   const [selectedTab, SetselectedTab] = useState('CreatePost');
   return (
