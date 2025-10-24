@@ -1,27 +1,29 @@
 // components/post_list.jsx
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import Post from './post';
 import Welcome from './welcome';
 import { PostList as PostListdata } from '../store/post-list-store';
-
+import Loading from './loading';
 const Post_List = () => {
   const { PostList1, addIntiPost } = useContext(PostListdata);
-
-  const handleonClickPost = () => {
+  const [fetching, setfetching] = useState(false);
+  useEffect(() => {
+    setfetching(true);
     fetch('https://dummyjson.com/posts')
       .then((res) => res.json())
       .then((data) => {
-        addIntiPost(data.posts);
+        addIntiPost([]);
+        setfetching(false);
       });
-  };
+  }, []);
 
   return (
     <>
-      {PostList1.length === 0 && <Welcome onClickPost={handleonClickPost} />}
+      {fetching && <Loading />}
+      {!fetching && PostList1.length === 0 && <Welcome />}
       <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-        {PostList1.map((post) => (
-          <Post key={post.id} post={post} />
-        ))}
+        {!fetching &&
+          PostList1.map((post) => <Post key={post.id} post={post} />)}
       </div>
     </>
   );
