@@ -1,5 +1,5 @@
 // store/post-list-store.jsx
-import { createContext, useReducer } from 'react';
+import { createContext, useCallback, useReducer } from 'react';
 
 const DefaultContext = {
   PostList1: [],
@@ -54,12 +54,15 @@ export const PostListProvider = ({ children }) => {
     });
   };
 
-  const deletePost = (postId) => {
-    dispatchPostList({
-      type: 'Delete_Post',
-      payload: { postId },
-    });
-  };
+  const deletePost = useCallback(
+    (postId) => {
+      dispatchPostList({
+        type: 'Delete_Post',
+        payload: { postId },
+      });
+    },
+    [dispatchPostList]
+  );
 
   return (
     <PostList.Provider value={{ PostList1, addPost, addIntiPost, deletePost }}>

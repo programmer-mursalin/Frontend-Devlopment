@@ -1,6 +1,9 @@
 {
     "files.associations": {
         "*.dbclient-js": "javascript",
-        "ostream": "cpp"
+        "ostream": "cpp",
+        "cstdlib": "cpp",
+        "cmath": "cpp",
+        "random": "cpp"
     }
 }
