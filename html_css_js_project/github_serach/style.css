@@ -75,7 +75,7 @@ h1:hover {
 }
 
 .user-info {
-    color: #333;
+    color: #9c1c1c;
     margin-left: 2rem;
     padding: 1rem;
     background-color: rgba(255,
@@ -140,6 +140,21 @@ h1:hover {
     .card {
         flex-direction: column;
         align-items: center;
+    }
+
+    .user-info {
+
+        width: 100%;
+        margin: 0;
+
+    }
+
+    .user-info ul {
+
+
+        justify-content: none;
+        display: flex;
+        flex-direction: column;
     }
 
     .inputForm {
